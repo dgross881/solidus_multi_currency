@@ -38,4 +38,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
   s.add_development_dependency 'rubocop', '>= 0.24.1'
+  s.add_dependency 'money' , ' ~> 6.5.1'
+  s.add_dependency 'google_currency'
 end
