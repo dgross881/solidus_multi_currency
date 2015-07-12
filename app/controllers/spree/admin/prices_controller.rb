@@ -5,12 +5,16 @@ module Spree
 
       def create
         params[:vp].each do |variant_id, prices|
-          variant = Spree::Variant.find(variant_id)
+         variant = Spree::Variant.find(variant_id)
+         base_currency = Spree::Config[:currency]
+         base_price = prices[base_currency][:price].to_money(base_currency)
+
           next unless variant
           supported_currencies.each do |currency|
             price = variant.price_in(currency.iso_code)
-            price.price = (prices[currency.iso_code].blank? ? nil : prices[currency.iso_code].to_money)
-            price.save! if price.new_record? && price.price || !price.new_record? && price.changed?
+            price.preferred_auto_update = prices[currency.iso_code][:auto_update]
+            price.price = (prices[currency.iso_code].blank? ? nil : prices[currency.iso_code][:price])
+            price.save! if price.new_record? && price.price || price.prefered_auto_update || !price.new_record? && price.changed?
           end
         end
         flash[:success] = Spree.t('notice.prices_saved')
