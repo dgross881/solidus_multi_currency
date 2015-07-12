@@ -1,7 +1,7 @@
 Spree::Price.class_eval do 
-  preference :auto_update, :boolean, default: false 
+  preference :auto_update, :boolean, :default => false
 
-# Need both callback in case secondary currencies get saved before the base or visa versa
+  # Need both callback in case secondary currencies get saved before the base or visa versa
   before_save :set_price_from_base_currency, if: :prefers_auto_update?
   after_save :update_other_currencies, if: :base_price?
   
