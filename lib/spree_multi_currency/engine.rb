@@ -6,7 +6,7 @@ module SpreeMultiCurrency
 
     require 'spree/core/currency_helpers'
     require 'money'
-    require 'money/bank/eu_central_bank'
+    require 'eu_central_bank'
 
     def self.activate
       ['../../app/**/*_decorator*.rb', '../../lib/**/*_decorator*.rb'].each do |path|
