@@ -38,3 +38,17 @@ $(document).ready(function(){
     listFilter($('#variant-prices'));
   });
 });
+
+
+// Allows for currency to be switched 
+$(function() {
+  $(".set-currency-price-manually").change(function() { 
+    $(this).prev("input").prop('disabled', $(this).is(":checked")).focus();
+    return false;
+  });
+  
+  $(".set-currency-price-manually").trigger('change');
+});
+
+
+

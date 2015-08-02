@@ -21,7 +21,7 @@
 		      <div class="col-md-10">
 			      <%= text_field_tag "vp[#{variant.id}][#{code}]", (price && price.price ? price.display_amount.money : ''), class: 'form-control' %>
             <% unless price.base_price? %>
-                <%= check_box_tag("vp[#{variant.id}][#{currency.iso_code}][auto_update]", 1, price.auto_update?, class: 'set-currency-price-manually')  %>
+                <%= check_box_tag("vp[#{variant.id}][#{currency.iso_code}][auto_update]", 1, price.preferred_auto_update, class: 'set-currency-price-manually')  %>
                 <%= content_tag :span, 'set automatically?', id: 'hint'%>
              <% end %>
 			     </div>
