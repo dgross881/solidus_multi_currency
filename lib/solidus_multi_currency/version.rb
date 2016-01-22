@@ -1,4 +1,4 @@
-module SpreeMultiCurrency
+module SolidusMultiCurrency
   module_function
 
   # Returns the version of the currently loaded SpreeMultiCurrency as a
