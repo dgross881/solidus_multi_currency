@@ -6,7 +6,7 @@ require 'spree_multi_currency/version'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_multi_currency'
+  s.name        = 'solidus_multi_currency'
   s.version     = SpreeMultiCurrency.version
   s.summary     = 'Provide currency customization for Spree Commerce.'
   s.description = s.summary
@@ -22,7 +22,8 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'spree_core', '~> 3.0.0.rc4'
+  solidus_version = [">= 1.1.0.alpha", "< 2"]
+  s.add_dependency "solidus_core", solidus_version
 
   s.add_development_dependency 'capybara', '~> 2.4.4'
   s.add_development_dependency 'selenium-webdriver', '>= 2.41'
