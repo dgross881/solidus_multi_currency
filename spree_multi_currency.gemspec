@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_runtime_dependency 'spree_core', '~> 3.0.0.rc4'
+  s.add_dependency 'money' , ' ~> 6.7.0'
+  s.add_dependency 'eu_central_bank'
 
   s.add_development_dependency 'capybara', '~> 2.4.4'
   s.add_development_dependency 'selenium-webdriver', '>= 2.41'
@@ -38,6 +40,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
   s.add_development_dependency 'rubocop', '>= 0.24.1'
-  s.add_dependency 'money' , ' ~> 6.5.1'
-  s.add_dependency 'eu_central_bank'
 end
